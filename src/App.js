@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import loadable from './components/Common/loadable';
+import pMinDelay from 'p-min-delay';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Loader from './components/Common/Loader';
+import './assets/css/style.css';
+import './assets/css/color.css';
+import './assets/css/animate.min.css';
+
+
+
+const Fashion = loadable(() => pMinDelay(import('./Page/'),250), {fallback : <Loader />})
+const Login = loadable(() => pMinDelay(import('./Page/Login'),250), {fallback : <Loader />})
+const Register = loadable(() => pMinDelay(import('./Page/Register'),250), {fallback : <Loader />})
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element = {<Fashion />} />
+        <Route path='/login' element = {<Login />} />
+        <Route path='/register' element = {<Register />} />
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
