@@ -10,7 +10,7 @@ const FashionBanner = () => {
             <div className='row'>
                 <div className='col-lg-6'>
                     <div className='banner_text_one'>
-                        <h1 className='wow flipInx'>Moda Icin</h1>
+                        <h1 className='wow flipInx'>Moda</h1>
                         <h3>%50 Indirim</h3>
                         <Link to="/shop" className='theme-btn-one bg-black btn_md'>Satin Al</Link>
                     </div>
