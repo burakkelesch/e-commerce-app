@@ -82,7 +82,15 @@ const productSlice = createSlice( {
 
             else
             {
-                Swal.fire('Basarisiz', 'ilgili ürün zaten favorilerde')
+                Swal.fire(
+                    {
+                    title : 'Basarisiz!',
+                        text : "Ürün zaten favorilerinizde!",
+                        icon: 'warning',
+                        showConfirmButton : false,
+                        timer : 2000
+                }
+                )
             }
         },
 

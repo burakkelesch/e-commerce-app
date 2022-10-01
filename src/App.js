@@ -3,7 +3,6 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import loadable from './components/Common/loadable';
 import pMinDelay from 'p-min-delay';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Loader from './components/Common/Loader';
 import './assets/css/style.css';
 import './assets/css/color.css';
