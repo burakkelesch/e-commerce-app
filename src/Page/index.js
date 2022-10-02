@@ -4,6 +4,7 @@ import Header from '../components/Common/Header'
 import FashionBanner from './Fashion/Banner'
 import BannerBottom from './Fashion/BannerBottom'
 import HotProduct from './Fashion/HotProduct/Index'
+import Footer from '../components/Common/Footer'
 
 const Fashion = () => {
   return (
@@ -13,6 +14,7 @@ const Fashion = () => {
         <FashionBanner />
         <BannerBottom />
         <HotProduct />
+        <Footer />
     </div>
   )
 }

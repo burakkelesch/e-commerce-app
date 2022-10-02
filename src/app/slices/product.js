@@ -26,12 +26,26 @@ const productSlice = createSlice( {
                 Swal.fire(
                     {
                         title : 'Basarili!',
-                        text : "Sepete Eklendi!",
-                        icon : 'succes',
+                        text : "Ürün Sepete Eklendi!",
+                        icon: 'success',
                         showConfirmButton : false,
                         timer : 2000
                     }
                 )
+            }
+
+            else
+            {
+                Swal.fire(
+                    {
+                    title : 'Basarisiz!',
+                        text : "Ürün Zaten Sepette Mevcut!",
+                        icon: 'warning',
+                        showConfirmButton : false,
+                        timer : 2000
+                }
+                )
+            
             }
         },
 

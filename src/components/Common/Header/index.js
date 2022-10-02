@@ -5,6 +5,9 @@ import NavigationItem from './NavigationItem';
 import logo from "../../../assets/img/logo.png";
 import { useSelector , useDispatch } from 'react-redux';
 import cancelSvg from '../../../assets/img/svg/cancel.svg';
+import searchSvg from '../../../assets/img/svg/search.svg';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -13,6 +16,7 @@ const Header = () => {
   let favorites = useSelector((state) =>state.products.favorites);
   const [click,setClick] = useState(false);
   let dispatch = useDispatch();
+  let history = useNavigate();
 
   {/* Sepet kismi */}
   const removeCartProduct = (id) => {
@@ -48,6 +52,19 @@ const Header = () => {
 
 const rmFavProduct = (id) => {
     dispatch({ type: "products/removeToFav", payload: { id } });
+}
+
+{/* Search Kismi */}
+
+const handleSearch = () => {
+    if(click) {
+        document.querySelector("#search").style = ("transform: translate(-100%,0);opacity :0")
+    }
+    else
+    {
+        document.querySelector("#search").style = ("transform: translate(0px,0px);opacity :1")
+    }
+    setClick(!click);
 }
 
   return (
@@ -101,7 +118,7 @@ const rmFavProduct = (id) => {
                                               
                                         </li>
                                         <li>
-                                            <a href="#" className="search_width"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                            <a href="#" className="search_width" onClick={handleSearch}><i class="fa-solid fa-magnifying-glass"></i></a>
                                         </li>
                                         <li>
                                             <a href="#" className="offacnvas offside-about offcanvas-toggle"><i class="fa fa-bars"></i></a>
@@ -217,6 +234,20 @@ const rmFavProduct = (id) => {
                 </div>
             </div>
            {/* Favori Listesi Popup Bitti  */}
+
+           {/* Search Pop'u Basladi */}
+           <div id="search" className="search-modal">
+                <button type="button" className="close" onClick={handleSearch}><img src={searchSvg} alt="icon" />
+                </button>
+                <form onSubmit={(e) => { e.preventDefault(); handleSearch();
+                     Swal.fire('Success', 'Sonuçlara göz atın', 'success');history('/shop/shop-left-sidebar');
+                    }}>
+                    <input type="search" placeholder="Ürün adı, markası." required />
+                    <button type="submit" className="btn btn-lg btn-main-search">Ara</button>
+                </form>
+            </div>
+           {/* Search Pop'u Bitti */}
+
     </div>
   )
 }
