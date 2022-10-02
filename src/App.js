@@ -13,6 +13,7 @@ import './assets/css/animate.min.css';
 const Fashion = loadable(() => pMinDelay(import('./Page/'),250), {fallback : <Loader />})
 const Login = loadable(() => pMinDelay(import('./Page/Login'),250), {fallback : <Loader />})
 const Register = loadable(() => pMinDelay(import('./Page/Register'),250), {fallback : <Loader />})
+const ShopLeftSideBar = loadable(() => pMinDelay(import('./Page/Shop/shop-left-sidebar'), 250), { fallback: <Loader /> });
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/' element = {<Fashion />} />
         <Route path='/login' element = {<Login />} />
         <Route path='/register' element = {<Register />} />
+        <Route path="/shop/shop-left-sidebar" element= {<ShopLeftSideBar />} />
       </Routes>
       </BrowserRouter>
     </div>

@@ -5,7 +5,7 @@ export const MenuData = [
         children : [
             {
             name : "Filtrele",
-            href : "/shop/left-bar"
+            href : "/shop/shop-left-sidebar"
         }
         ]
     },
