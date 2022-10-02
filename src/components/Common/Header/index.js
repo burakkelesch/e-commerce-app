@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import {MenuData} from "./MenuData";
 import NavigationItem from './NavigationItem';
@@ -9,6 +9,17 @@ import { useSelector } from 'react-redux';
 const Header = () => {
   let carts = useSelector((state) => state.products.carts);
   let favorites = useSelector((state) =>state.products.favorites);
+  const [click,setClick] = useState(false);
+  const handleClick = () =>{
+    if(click) {
+        document.querySelector("#offcanvas-add-cart").style = ("transform : translateX(100%);")
+    }
+    else
+    {
+        document.querySelector("#offcanvas-add-cart").style = ("transform : translateX(0%);")
+    }
+    setClick(click);
+  }
   return (
     <div>
       <header className="header-section d-none d-xl-block">
@@ -49,7 +60,7 @@ const Header = () => {
                                         <li>
                                             {
                                                 carts.length ?
-                                                   <a href="#!" className="offcanvas-toggle" >
+                                                   <a href="#!" className="offcanvas-toggle" onClick={handleClick} >
                                                     <i className="fa fa-shopping-bag"></i>
                                                     <span className="item-count">{carts.length}</span></a>
                                                     :
@@ -71,6 +82,12 @@ const Header = () => {
                     </div>
                 </div>
             </header>
+
+            <div id='offcanvas-add-cart' className='offcanvas offcanvas-rightside offcanvas-add-cart-section'>
+                <div className='offcanvas-add-cart-wrapper'>
+                    <h4 className='offcanvas-title'>Alisveris Sepeti</h4>
+                </div>
+            </div>
     </div>
   )
 }
