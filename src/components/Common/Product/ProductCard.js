@@ -10,7 +10,7 @@ const ProductCard = (props) => {
     let dispatch = useDispatch();
 
     const sepeteEkle = async(id) => {
-        dispatch({type :"products/addToCart",payload : {id}})
+        dispatch({type :"products/AddToCart",payload : {id}})
     }
 
     const favorilereEkle = async(id) => {
