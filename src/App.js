@@ -17,6 +17,7 @@ const ShopLeftSideBar = loadable(() => pMinDelay(import('./Page/Shop/shop-left-s
 const Cart = loadable(() => pMinDelay(import('./Page/Cart'), 250), { fallback: <Loader /> });
 const About = loadable(() => pMinDelay(import('./Page/About'), 250), { fallback: <Loader /> });
 const ContactTwo = loadable(() => pMinDelay(import('./Page/Contact'), 250), { fallback: <Loader /> });
+const CheckOutTwo = loadable(() => pMinDelay(import('./Page/CheckOut/checkout-two'), 250), { fallback: <Loader /> });
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/Cart" element= {<Cart />} />
         <Route path="/about" element= {<About />} />
         <Route path="/contact" element= {<ContactTwo />} />
+        <Route path="/checkout-two" element= {<CheckOutTwo />} />
       </Routes>
       </BrowserRouter>
     </div>
