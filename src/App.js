@@ -10,6 +10,8 @@ import './assets/css/animate.min.css';
 
 
 
+const ProductDetailsTwos = loadable(() => pMinDelay(import('./Page/Product/product-details-two'),250), {fallback : <Loader />})
+const Favorites = loadable(() => pMinDelay(import('./Page/WishList/'),250), {fallback : <Loader />})
 const Fashion = loadable(() => pMinDelay(import('./Page/'),250), {fallback : <Loader />})
 const Login = loadable(() => pMinDelay(import('./Page/Login'),250), {fallback : <Loader />})
 const Register = loadable(() => pMinDelay(import('./Page/Register'),250), {fallback : <Loader />})
@@ -34,6 +36,8 @@ function App() {
         <Route path="/contact" element= {<ContactTwo />} />
         <Route path="/checkout-two" element= {<CheckOutTwo />} />
         <Route path="/order-complete" element= {<OrderComplete />} />
+        <Route path="/wishlist" element= {<Favorites />} />
+        <Route path="/product-details-two/:id" element= {<ProductDetailsTwos />} />
       </Routes>
       </BrowserRouter>
     </div>

@@ -143,11 +143,11 @@ const handleSearch = () => {
                         {carts.map((data,index) => (
                             <li className='offcanvas-wishlist-item-single' key={index}>
                                 <div className='offcanvas-wishlist-item-block'>
-                                <Link to={`/product/details-two/${data.id}`} className="offcanvas-wishlist-image">
+                                <Link to={`/product-details-two/${data.id}`} className="offcanvas-wishlist-image">
                                 <img src={data.img} alt={data.img} className="offcanvas-wishlist-item-image-link" ></img>
                                 </Link>
                                 <div className='offcanvas-wishlist-item-content'>
-                                    <Link to={`/product/details-two/${data.id}`}>{data.title}</Link>
+                                    <Link to={`/product-details-two/${data.id}`}>{data.title}</Link>
                                     <div className='offcanvas-wishlist-item-details'>
                                         <span className='offcanvas-wishlist-item-details-quantity'>
                                         {data.quantity || 1} x &nbsp;
