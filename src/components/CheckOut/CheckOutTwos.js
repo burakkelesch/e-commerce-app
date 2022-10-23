@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import React from "react"
 import TopLogin from "./TopLogin"
 import YourOrder from "./YourOrder"
+=======
+import React from "react";
+import TopLogin from "./TopLogin";
+import YourOrder from "./YourOrder";
+
+>>>>>>> 3d8c0c5cbfc28590372484dc47e6e4d4169170b1
 const CheckOutTwo = () => {
 
     return (

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3d8c0c5cbfc28590372484dc47e6e4d4169170b1
 import React from 'react'
 import ProductCard from '../Product/ProductCard'
 import { useSelector } from "react-redux";

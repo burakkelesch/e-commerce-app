@@ -1,13 +1,26 @@
+<<<<<<< HEAD
 import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import Swal from 'sweetalert2';
 
 
 const TopLogin = () => {
+=======
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Swal from "sweetalert2";
+
+const TopLogin = () => {
+    
+>>>>>>> 3d8c0c5cbfc28590372484dc47e6e4d4169170b1
     let dispatch = useDispatch();
 
     let status = useSelector((state) => state.user.status);
     let user = useSelector((state) => state.user.user);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3d8c0c5cbfc28590372484dc47e6e4d4169170b1
     const login = () => {
         if(status){
             Swal.fire({
@@ -25,8 +38,13 @@ const TopLogin = () => {
                 text: 'Hoşgeldin '+ name
             })
         }
+<<<<<<< HEAD
 
     }
+=======
+    }
+
+>>>>>>> 3d8c0c5cbfc28590372484dc47e6e4d4169170b1
     return (
         <>
             <div className="col-12">
@@ -83,4 +101,9 @@ const TopLogin = () => {
         </>
     )
 }
+<<<<<<< HEAD
 export default TopLogin
+=======
+
+export default TopLogin
+>>>>>>> 3d8c0c5cbfc28590372484dc47e6e4d4169170b1

@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 import React from "react"
 import { Link } from "react-router-dom"
+=======
+import React from "react";
+import { Link } from "react-router-dom";
+
+
+>>>>>>> 3d8c0c5cbfc28590372484dc47e6e4d4169170b1
 const YourOrder = () => {
     return (
         <>
@@ -94,7 +101,10 @@ const YourOrder = () => {
             </div>
         </>
     )
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3d8c0c5cbfc28590372484dc47e6e4d4169170b1
 }
 
 export default YourOrder

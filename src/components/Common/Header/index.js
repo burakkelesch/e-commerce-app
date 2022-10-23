@@ -212,6 +212,7 @@ const Header = () => {
                         <img src={svg} alt="icon" />
                     </button>
                 </div>
+<<<<<<< HEAD
                 <div className="offcanvas-mobile-menu-wrapper">
 
                     <div className="mobile-contact-info">
@@ -312,6 +313,26 @@ const Header = () => {
                                             <span className="offcanvas-wishlist-item-details-price">
                                                 {data.price} TL</span>
                                         </div>
+=======
+                <div className='offcanvas-add-cart-wrapper'>
+                    <h4 className='offcanvas-title'>Alisveris Sepeti</h4>
+                    <ul className='offcanvas-cart'>
+                        {carts.map((data,index) => (
+                            <li className='offcanvas-wishlist-item-single' key={index}>
+                                <div className='offcanvas-wishlist-item-block'>
+                                <Link to={`/product-details-two/${data.id}`} className="offcanvas-wishlist-image">
+                                <img src={data.img} alt={data.img} className="offcanvas-wishlist-item-image-link" ></img>
+                                </Link>
+                                <div className='offcanvas-wishlist-item-content'>
+                                    <Link to={`/product-details-two/${data.id}`}>{data.title}</Link>
+                                    <div className='offcanvas-wishlist-item-details'>
+                                        <span className='offcanvas-wishlist-item-details-quantity'>
+                                        {data.quantity || 1} x &nbsp;
+                                        </span>
+                                        <span className='offcanvas-wishlist-item-details-price'>
+                                            {data.price} Tl
+                                        </span>
+>>>>>>> 3d8c0c5cbfc28590372484dc47e6e4d4169170b1
                                     </div>
                                 </div>
                                 <div className="offcanvas-wishlist-item-delete text-right">
