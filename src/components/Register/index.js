@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom"
 const RegisterArea = () => {
     let dispatch = useDispatch();
     const history = useNavigate()
-    const [user, setUser] = useState('')
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
+    const [name, setName] = useState('')
 
     let status = useSelector((state) => state.user.status);
     let userData = useSelector((state) => state.user.user);
@@ -26,20 +26,20 @@ const RegisterArea = () => {
                     '<b>Shop</b>',
             }).then((result) => {
                 if(result.isConfirmed) {
-                  history.push('/my-account')
+                  history.push('/')
                 } else {
                   // not clicked
                 }
               });
         }else{
-            dispatch({ type: "user/register", payload: { user, email, pass } })
+            dispatch({ type: "user/register", payload: { name, email, pass } })
             
             Swal.fire({
                 icon: 'success',
                 title: 'Kayıt Başarılı',
-                text: 'Hoş geldiniz '+user
+                text: 'Hoş geldiniz '+name
             })
-            history("/my-account");
+            history("/");
         }
         
 
@@ -55,15 +55,18 @@ const RegisterArea = () => {
                                 <form onSubmit={(e)=>{e.preventDefault();register()}}>
                                     <div className="default-form-box">
                                         <label>Kullanıcı Adı<span className="text-danger">*</span></label>
-                                        <input type="text" className="form-control" value={user} onChange={e => setUser(e.currentTarget.value)} required/>
+                                        <input type="text" className="form-control" value={name}
+                                         onChange={e => setName(e.currentTarget.value)} required/>
                                     </div>
                                     <div className="default-form-box">
                                         <label>Email<span className="text-danger">*</span></label>
-                                        <input type="email" className="form-control" value={email} onChange={e => setEmail(e.currentTarget.value)} required/>
+                                        <input type="email" className="form-control" value={email} 
+                                        onChange={e => setEmail(e.currentTarget.value)} required/>
                                     </div>
                                     <div className="default-form-box">
                                         <label>Şifre<span className="text-danger">*</span></label>
-                                        <input type="password" className="form-control" value={pass} onChange={e => setPass(e.currentTarget.value)} required minLength="8"/>
+                                        <input type="password" className="form-control" value={pass}
+                                         onChange={e => setPass(e.currentTarget.value)} required minLength="8"/>
                                     </div>
                                     <div className="login_submit">
                                         <button className="theme-btn-one btn-black-overlay btn_md" type="submit">Kayıt Ol</button>

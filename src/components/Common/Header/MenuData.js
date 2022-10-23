@@ -42,3 +42,5 @@ export const MenuData = [
     }
 
 ]
+
+export default MenuData

@@ -24,7 +24,7 @@ const LoginArea = () => {
                     '<b>Shop</b> page',
             }).then((result) => {
                 if(result.isConfirmed) {
-                  history('/my-account')
+                  history('/')
                 } else {
                   // not clicked
                 }
@@ -38,7 +38,7 @@ const LoginArea = () => {
                 title: 'Giriş Başarılı',
                 text: 'Hoşgeldiniz '+ name
             })
-            history("/my-account");
+            history("/");
         }
         
 
@@ -55,7 +55,7 @@ const LoginArea = () => {
                                 <form onSubmit={(e)=>{e.preventDefault();login()}}>
                                     <div className="default-form-box">
                                         <label>Kullanıcı adı veya Email<span className="text-danger">*</span></label>
-                                        <input type="text" className="form-control" required defaultValue="brk@kls.com"/>
+                                        <input type="text" className="form-control" required defaultValue="ibr@ibr.com"/>
                                     </div>
                                     <div className="default-form-box">
                                         <label>Şifre<span className="text-danger">*</span></label>

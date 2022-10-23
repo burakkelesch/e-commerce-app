@@ -1,17 +1,18 @@
+import React from 'react'
 import Banner from '../../components/Common/Banner'
 import Header from '../../components/Common/Header'
 import Footer from '../../components/Common/Footer'
-import WishArea from '../../components/WishList'
+import CheckOutTwos  from '../../components/CheckOut/CheckOutTwos'
 
-const Favorites = () => {
+const CheckOutTwo = () => {
     return(
         <>
+
         <Header />
-        <Banner title= "Favoriler" />
-        <WishArea />
+        <Banner />
+        <CheckOutTwos />
         <Footer />
         </>
     )
 }
-
-export default Favorites
+export default CheckOutTwo

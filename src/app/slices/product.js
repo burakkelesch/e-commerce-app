@@ -85,7 +85,10 @@ const productsSlice = createSlice({
         let {id} = action.payload;
         let favorilerinOnSonHali  = state.favorites.filter(item=> item.id !== parseInt(id))
         state.favorites = favorilerinOnSonHali
-},
+      },
+      clearFav : (state) => {
+        state.favorites = []
+      }
 
     }
 })
